@@ -7,12 +7,14 @@ const int MAX_PERIODS = 10;
 const int MAX_TEAMS = 4;
 const int MIN_PERIODS = 1;
 const int MIN_TEAMS = 1;
+void printScoreboard(vector<vector<int> >); //prototype
+vector<vector<int> > board;
 
 int main()
 {
   int periods;
   int teams;
-  vector<vector<int> > board;
+//  vector<vector<int> > board;
 
   cout<<"How many competitors? ";
   cin>>teams;
@@ -43,7 +45,13 @@ int main()
         board[row][col] = current;
     }
    }
+   }
+printScoreboard(board); //call
+  return 0;
+}
    //once created, display the scoreboard
+void printScoreboard(vector<vector<int> > grid)
+{
    cout<<"SCOREBOARD"<<endl;
    for(int row = 0; row < board.size(); row++)
    {
@@ -55,6 +63,5 @@ int main()
      }
      cout<<endl;
    }
-  } 
-  return 0;
-}
+} 
+
